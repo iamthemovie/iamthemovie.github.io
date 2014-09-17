@@ -4,14 +4,15 @@ permalink: /:categories/:year/:month/:day/:title
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 highlighter: pygments
+paginate:    10
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Jordan Appleson
+title : Jordan Appleson / Software Engineer
 tagline: Thoughts on Software Engineering, Big Data and Electronics.
 author :
-  name : Jordan Appleson
+  name : Jordan Appleson 
   email : null
   github : iamthemovie
   twitter : jordanisonfire

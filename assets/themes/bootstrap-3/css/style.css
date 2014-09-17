@@ -21,7 +21,23 @@ h1, h2, h3, h4 {
   background-color: #fdcd60;
 }
 
+p {
+  font-size: 15px;
+}
 
+.posts-summary .post-summary__date {
+  display: block;
+ color: #aaa;
+}
+.post-summary .post-summary__title {
+  display: block;
+  font-size: 18px;
+}
+.post-summary {
+  margin: 10px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
 
 /* posts index */
 .post > h3.title {

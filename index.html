@@ -1,0 +1,44 @@
+---
+layout: default
+title: Articles
+tagline: 
+---
+{% include JB/setup %}
+<div class="row">
+  <div class="col-lg-6 col-md-6">
+    <div class="page-header">
+      <h4>About Me</h4>
+    </div>
+      <p>I'm a software engineer / ops engineer working in the UK, currently I lead development on a search analytics platform at a leading agency in the North. I love technical challenges! I tend to regularly use C#, Go, PHP. This is a place for my own thoughts and experiences with big data and high performance applications.</p>
+      <p>While I love the idea of making this site look nicer, and I will, I want to be writing about things for now. Jekyll + Bootstrap will have to do!</p>
+      <p>You can <a target="_blank" href="http://twitter.com/jordanisonfire">tweet me</a>, see <a href="http://github.com/iamthemovie" target="_blank">my code</a> or talk to me on the #mongodb channel on freenode.
+      </p>
+  </div>
+  <div class="col-lg-6 col-md-6">
+    <div class="page-header">
+      <h4>Articles</h4>
+    </div>
+    <div class="posts-summary">
+  {% for post in paginator.posts %}
+    <div class="post-summary">
+      <span class="post-summary__date">{{ post.date | date_to_string }}</span>
+      <span class="post-summary__title"><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></span>
+      </div>
+    {% endfor %}
+    </div>
+    {% if paginator.total_pages > 1 %}
+    <div class="pagination">
+      {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//','/' }}">&laquo; Prev</a>
+      {% else %}
+        <span>&laquo; Prev</span>
+      {% endif %}
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+      {% else %}
+        <span>Next &raquo;</span>
+      {% endif %}
+    </div>
+    {% endif %}
+    </div>
+</div>
