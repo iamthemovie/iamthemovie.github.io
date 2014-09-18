@@ -26,7 +26,7 @@ On this particular HP Proliant it has a P400i RAID controller, now I've had issu
 
 A quick google brought up <a href="http://serverfault.com/questions/611182/centos-7-x64-and-hp-proliant-dl360-g5-scsi-controller-compatibility" target="_blank" >this StackOverflow article</a>.
 
-**PROBLEM:** RHEL7 removes the the the CCSIS driver and you need to load the kernel component before it can see any drives.
+**PROBLEM:** RHEL7 removes the the the CCSIS driver and you need to load the kernel component correctly before it can see any drives.
 
 There are two parts to this install:
 
@@ -34,7 +34,7 @@ There are two parts to this install:
 
 2. Altering the bootloader to ensure that on boot the kernel uses the same HPSA directives, otherwise after install it'll boot and guess what... it won't see your drives!
 
-### Enabling HPSA on the Installer
+### Enabling HPSA Allow Any on the Installer
 
 I used the CentOS 7 minimal ISO but the DVD should work fine too.
 
@@ -50,7 +50,7 @@ When the installer boots up, you should see your logical volume and use it as an
 
 When it reboots though, if you let it get to that stage, you'll end up in emergency mode because it won't find your drive again.
 
-### HPSA on Boot
+### HPSA Allow Any on Boot
 
 It makes sense that on the freshly installed  system, the kernel modules that we needed to load for the CCISS drivers won't load on boot.
 
@@ -90,6 +90,8 @@ We can fix this by regenerating the GRUB boot file, although to do this we need 
 ### Thoughts
 
 Although not ideal, this seems to be the only way I've managed to piece together so far. Really it didn't take that long to find out the correct information but hopefully it'll save someone some time. I hate it when there's relatively no information regarding isolated issues like this!
+
+I guess the underlying issue here is the drivers are deprecated and are the hardware is ex-enterprise being over a few years old now.
 
 If you do have any issues, feel free to tweet me and I'll be happy to help. @jordanisonfire
 
