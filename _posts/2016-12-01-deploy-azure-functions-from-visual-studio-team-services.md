@@ -49,7 +49,7 @@ Notice anything familiar?
 
 In Visual Studio however, the Web App similarities end abruptly.
 
-There many areas of questions when I was adding Azure Functions to our Build and Release pipeline but a couple of highlights relevant to this post:
+There were many areas of question when I was adding Azure Functions to our Build and Release pipeline but a couple of highlights relevant to this post:
 
 • Where do you put your Functions in Visual Studio? 
 
