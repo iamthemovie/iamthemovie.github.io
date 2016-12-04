@@ -35,11 +35,11 @@ Here's a great example of how similar Azure Functions are by viewing the underli
 
 Find the Mange Tab in the Function App Settings:
 
-![alt text](/images/20161201/1.png "Azure Function App Settings")
+![alt text](/images/20161201/1.png "Azure Function App Settings"){: .col-lg-12 }
 
 Notice anything familiar?
 
-![alt text](/images/20161201/2.png)
+![alt text](/images/20161201/2.png){: .col-lg-12 }
 
 In Visual Studio however, the Web App similarities end abruptly.
 
