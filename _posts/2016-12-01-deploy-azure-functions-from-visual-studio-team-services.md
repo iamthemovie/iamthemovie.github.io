@@ -211,7 +211,7 @@ Assuming you have your Infrastructure deployed then deploying becomes a straight
 ![alt text](/images/20161201/10.png)
 
 
-Choose the name of the deployed App Service name (whatever you chose in your ARM template) and point it to the Zip package contained within the artefacts:
+Choose the name of the deployed App Service name (whatever you chose in your ARM template) and point it to the Zip package contained within the artifacts:
 
 ![alt text](/images/20161201/11.png)
 
