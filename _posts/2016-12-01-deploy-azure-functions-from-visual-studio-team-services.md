@@ -4,11 +4,6 @@ title: "Deploying Azure Functions with VSTS"
 description: "Deploying Azure Functions from Visual Studio Team Services."
 category: "Azure"
 tags: [Azure, Azure Functions, VSTS]
-style: |
-  .block-margin {
-		margin: 15px 0;
-    display: block;
-	}
 ---
 
 {% include JB/setup %}
@@ -48,13 +43,9 @@ Find the Mange Tab in the Function App Settings:
 
 Notice anything familiar?
 
-<br>
-<br>
-
-![alt text](/images/20161201/2.png){: .col-lg-12 }
-
-<br>
-<br>
+<div class="col-lg-12" style="display: block; margin: 15px 0;">
+![alt text](/images/20161201/2.png)
+</div>
 
 In Visual Studio however, the Web App similarities end abruptly.
 
