@@ -28,7 +28,7 @@ Something that's quite evident when working with Functions is they are effective
 
 • A Service Plan - this can be a Dynamic Service plan set to the Consumption Tier (pay for what you execute).
 
-• A Function App - in terms of infrastructure this draws many similarities with a standard Web App runs on a Service Plan.
+• A Function App - in terms of infrastructure this draws many similarities with a standard Web App and runs on a Service Plan.
 
 The fact that a Function App shares the same idiosyncrasies Web Apps is great! The Function App runs the same stuff underneath with a few tweaks which means it has the same file system mechanics, the same deployment strategies work, the ARM template definitions are similar, the list goes on…
 
