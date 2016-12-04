@@ -4,6 +4,11 @@ title: "Deploying Azure Functions with VSTS"
 description: "Deploying Azure Functions from Visual Studio Team Services."
 category: "Azure"
 tags: [Azure, Azure Functions, VSTS]
+style: |
+  .block-margin {
+		margin: 15px 0;
+    display: block;
+	}
 ---
 
 {% include JB/setup %}
