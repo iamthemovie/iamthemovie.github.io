@@ -45,7 +45,7 @@ Notice anything familiar?
 
 <br> 
 
-![alt text](/images/20161201/2.png){: .show .col-lg-12 }
+![alt text](/images/20161201/2.png){: .show .col-lg-12 .margin-15 }
 
 <br>
 
