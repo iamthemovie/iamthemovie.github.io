@@ -14,7 +14,7 @@ We've been looking forward to using Azure Functions in Production since we first
 
 At the time of writing this article the Visual Studio 2015 tooling for Azure Functions was not available.
 
-Actually they released the preview today and while it looks like a great start there are logistics issues with the lack of tooling - I'm positive this will be rectified in the coming weeks and months!
+*Actually they released the preview today and while it looks like a great start there are logistics issues with the lack of tooling - I'm positive this will be rectified in the coming weeks and months!*
 
 All our infrastructure is defined by ARM templates and VSTS handles our build and deployments so it's essential Functions fit into this pipeline. No manual setup. No messing around with the Azure Portal to configure deployments. 
 
@@ -26,8 +26,9 @@ While we love the simplicity of the click-to-configure that the Azure Portal giv
 
 Something that's quite evident when working with Functions is they are effectively deploy as Web Apps. They consists of :
 
-	• A Service Plan - this can be a Dynamic Service plan set to the Consumption Tier (pay for what you execute).
-	• A Function App - in terms of infrastructure this draws many similarities with a standard Web App runs on a Service Plan.
+• A Service Plan - this can be a Dynamic Service plan set to the Consumption Tier (pay for what you execute).
+
+• A Function App - in terms of infrastructure this draws many similarities with a standard Web App runs on a Service Plan.
 
 The fact that a Function App shares the same idiosyncrasies Web Apps is great! The Function App runs the same stuff underneath with a few tweaks which means it has the same file system mechanics, the same deployment strategies work, the ARM template definitions are similar, the list goes on…
 
@@ -37,17 +38,22 @@ Find the Mange Tab in the Function App Settings:
 
 ![alt text](/images/20161201/1.png "Azure Function App Settings"){: .col-lg-12 }
 
+
 Notice anything familiar?
 
+
 ![alt text](/images/20161201/2.png){: .col-lg-12 }
+
 
 In Visual Studio however, the Web App similarities end abruptly.
 
 There many areas of questions when I was adding Azure Functions to our Build and Release pipeline but a couple of highlights relevant to this post:
 
-	• Where do you put your Functions in Visual Studio? 
-	• How do you use your own projects shared assemblies with them?
-	• Do I have to script things to move them about in deployment scenarios?
+• Where do you put your Functions in Visual Studio? 
+
+• How do you use your own projects shared assemblies with them?
+
+• Do I have to script things to move them about in deployment scenarios?
 
 For me, Functions have to be in our Visual Studio Solution. This keeps our code organized, and reduces the potential for messy repository semantics.
 
@@ -61,7 +67,7 @@ Important: Currently you have to deploy Dynamic App Service plans into Resource 
 
 In the resources section of an ARM Template we'll need a Service Plan, the Application, and if ideally a dedicated Storage Account for storing the Function Apps diagnostic and Metric Information. We use other Queue Bindings from different storage accounts to trigger the functions.
 
-*The Service Plan (Server Farm)*
+**The Service Plan (Server Farm)**
 
 As mentioned earlier, the Service Plans for functions need to be deployed first to a resource group as Azure allocates these slightly differently from legacy systems. The key here is the SKU which is set to Dynamic with a couple of other Consumption Plans specific properties. Apart from the obvious other properties are the same as a standard service plan.
 
@@ -84,7 +90,7 @@ As mentioned earlier, the Service Plans for functions need to be deployed first 
   },
 ```
 
-*Dedicate Storage Account*
+**Dedicate Storage Account**
 
 This is a requirement, having dedicated storage accounts for each Function App is a good idea. I wouldn't store all your Function Apps diagnostic logs in a single storage account for various reasons. In any case, you're only billed for what you use with storage accounts also.
 
@@ -101,7 +107,7 @@ This is a requirement, having dedicated storage accounts for each Function App i
 },
 ```
 
-*Function App*
+**Function App**
 
 Again, the similarities between Web Apps and Function Apps are apparent when comparing the difference in ARM Templates. The Function App really is just a change in the "Kind" property as you can see.
 
@@ -148,11 +154,15 @@ The fact functions have the standard App Settings resource available makes them 
 
 ## VSTS Deployment Solution
 
-	• Create an ASP.NET Core Project.
-	• Add your Functions as folders.
-	• Alter the project.json to include our Function folders.
-	• Build using Dotnet Publish and Archive the output directory.
-	• Deploy in VSTS using the standard Web App Deploy step.
+• Create an ASP.NET Core Project.
+
+• Add your Functions as folders.
+
+• Alter the project.json to include our Function folders.
+
+• Build using Dotnet Publish and Archive the output directory.
+
+• Deploy in VSTS using the standard Web App Deploy step.
 
 This also allows us to Add References to our Solution Assemblies and NuGet Packages.
 
@@ -169,7 +179,7 @@ The folder contains the CSX file (run.csx) and the function.json which contains 
 ![alt text](/images/20161201/5.png)
 
 
-Add your Function Folders to the Publish Options Include
+### Add your Function Folders to the Publish Options Include
 
 This is important because we will use the `dotnet publish` command to output the publish folder we'll want to Zip up and deploy to the Function App. If you were to look in the publish output folder you'll find you're pleasantly (un)surprised to see an almost flat directory structure - this is great because we can comfortably reference our DLLs without worrying about folder structure. It should `just work ™`.
 
