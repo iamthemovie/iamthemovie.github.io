@@ -43,8 +43,6 @@ Find the Mange Tab in the Function App Settings:
 
 Notice anything familiar?
 
-<br> 
-
 ![alt text](/images/20161201/2.png){: .show .col-lg-12 .margin-15 }
 
 <br>
@@ -224,8 +222,8 @@ Choose the name of the deployed App Service name (whatever you chose in your ARM
 
 ## Conclusion
 
-Functions are still a new concept to a lot of engineers and ops engineers. Microsoft have done a great job using the foundations they've built into Azure already to deploy new services that fit into existing infrastructure without re-inventing their own wheel so to speak. The tooling for VSTS and Visual Studio will definitely get better in the coming weeks and months but until then this solution works great for deploying Functions to Production through ARM Templates and VSTS without manual intervention and integrating into an existing fully automated pipeline.
+Functions are still a new concept to a lot of engineers and ops engineers, especially in terms of deploying them in an enterprise release pipeline. The folks at Microsoft have done a great job using their existing Azure foundations to create these new types of services. For us this means find ways of integrating these new services doesn't mean re-inventing a wheel. The tooling for VSTS and Visual Studio will definitely get better but until then this solution works for deploying Functions to Production with ARM Templates and VSTS without manual intervention. This for us has made it much easier to integrate into an already existing Production application.
 
-As soon as Microsoft's Tooling comes out of preview, we'll switch but for now they've made it dead simple to work around the lack of tooling (right now) and get these bad boys to production!
+As soon as Microsoft's Tooling comes out of preview, we'll look to switch. For now though, they've made Functions dead simple to work with and create a nice work around for.
 
 If anyone has any questions or comments, let me know via twitter or comments!
