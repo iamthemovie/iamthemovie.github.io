@@ -43,11 +43,11 @@ Find the Mange Tab in the Function App Settings:
 
 Notice anything familiar?
 
-<div class="col-lg-12" style="display: block; margin: 15px 0;">
+<br> 
 
-![alt text](/images/20161201/2.png)
+![alt text](/images/20161201/2.png){: .show .col-lg-12 }
 
-</div>
+<br>
 
 In Visual Studio however, the Web App similarities end abruptly.
 
