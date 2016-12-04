@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Deploying Azure Functions with VSTS"
-description: ""
+description: "Deploying Azure Functions from Visual Studio Team Services."
 category: "Azure"
 tags: [Azure, Azure Functions, VSTS]
 ---
@@ -35,11 +35,11 @@ Here's a great example of how similar Azure Functions are by viewing the underli
 
 Find the Mange Tab in the Function App Settings:
 
-![alt text](/assets/images/20161201/1.png "Azure Function App Settings")
+![alt text](/images/20161201/1.png "Azure Function App Settings")
 
 Notice anything familiar?
 
-<pic 2>
+![alt text](/images/20161201/2.png)
 
 In Visual Studio however, the Web App similarities end abruptly.
 
@@ -160,13 +160,13 @@ The fact functions have the standard App Settings resource available makes them 
 
 Create a Blank ASP.NET Core Project. I removed the wwwroot directory also. Add an Azure Function Folder with an appropriate name. Here we've got a timer based Azure Function that I copied from the Azure Functions Quick Start portal.
 
-<pic 3>
+![alt text](/images/20161201/3.png)
 
 
 The folder contains the CSX file (run.csx) and the function.json which contains bindings and timer configuration.
 
-<pic 4>
-<pic 5>
+![alt text](/images/20161201/4.png)
+![alt text](/images/20161201/5.png)
 
 
 Add your Function Folders to the Publish Options Include
@@ -174,15 +174,15 @@ Add your Function Folders to the Publish Options Include
 This is important because we will use the `dotnet publish` command to output the publish folder we'll want to Zip up and deploy to the Function App. If you were to look in the publish output folder you'll find you're pleasantly (un)surprised to see an almost flat directory structure - this is great because we can comfortably reference our DLLs without worrying about folder structure. It should `just work ™`.
 
 
-<pic 6>
+![alt text](/images/20161201/6.png)
 
 ### Build in VSTS
 
 Seeing as our Azure Functions project (a pretend ASP.NET Core project) is contained within the solution, a solution build will adequately restore and reference our external assemblies. Combine this with a dotnet publish and the output directory is a winner for deploying to our Function App.
 
 
-<pic 7>
-<pic 8>
+![alt text](/images/20161201/7.png)
+![alt text](/images/20161201/8.png)
 
 
 ### Archive the Output
@@ -190,23 +190,23 @@ Seeing as our Azure Functions project (a pretend ASP.NET Core project) is contai
 The output path of the publish will be different depending on the version of .NET you are referencing in the ASP.NET Core project. We're using .NET 4.6.2 here so the path of the directory reflects this:
 
 
-<pic 9>
+![alt text](/images/20161201/9.png)
 
 ### Releasing
 
 Assuming you have your Infrastructure deployed then deploying becomes a straight forward Web App Deployment:
 
-<pic 10>
+![alt text](/images/20161201/10.png)
 
 
 Choose the name of the deployed App Service name (whatever you chose in your ARM template) and point it to the Zip package contained within the artefacts:
 
-<pic 11>
+![alt text](/images/20161201/11.png)
 
 
 All being well you should see your Function appear in the Portal!
 
-<pic 12>
+![alt text](/images/20161201/12.png)
 
 ## Conclusion
 
