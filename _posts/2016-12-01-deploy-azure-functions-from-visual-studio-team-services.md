@@ -222,7 +222,7 @@ Choose the name of the deployed App Service name (whatever you chose in your ARM
 
 ## Conclusion
 
-Functions are still a new concept to a lot of engineers and ops engineers, especially in terms of deploying them in an enterprise release pipeline. The folks at Microsoft have done a great job using their existing Azure foundations to create these new types of services. For us this means find ways of integrating these new services doesn't mean re-inventing a wheel. The tooling for VSTS and Visual Studio will definitely get better but until then this solution works for deploying Functions to Production with ARM Templates and VSTS without manual intervention. This for us has made it much easier to integrate into an already existing Production application.
+Functions are still a new concept to a lot of engineers and ops engineers, especially in terms of deploying them in an enterprise release pipeline. The folks at Microsoft have done a great job using their existing Azure foundations to create these new types of services. For us this means finding custom ways of integrating these new services doesn't mean re-inventing a wheel. The tooling for VSTS and Visual Studio will definitely get better but until then this solution works for deploying Functions to Production with ARM Templates and VSTS without manual intervention. This for us has made it much easier to integrate into an already existing Production application.
 
 As soon as Microsoft's Tooling comes out of preview, we'll look to switch. For now though, they've made Functions dead simple to work with and create a nice work around for.
 
