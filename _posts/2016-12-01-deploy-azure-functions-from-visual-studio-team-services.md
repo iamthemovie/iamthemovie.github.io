@@ -38,12 +38,18 @@ Find the Mange Tab in the Function App Settings:
 
 ![alt text](/images/20161201/1.png "Azure Function App Settings"){: .col-lg-12 }
 
+<br>
+<br>
 
 Notice anything familiar?
 
+<br>
+<br>
 
 ![alt text](/images/20161201/2.png){: .col-lg-12 }
 
+<br>
+<br>
 
 In Visual Studio however, the Web App similarities end abruptly.
 
@@ -175,7 +181,7 @@ Create a Blank ASP.NET Core Project. I removed the wwwroot directory also. Add a
 
 The folder contains the CSX file (run.csx) and the function.json which contains bindings and timer configuration.
 
-![alt text](/images/20161201/4.png)
+![alt text](/images/20161201/4.png){: .col-lg-12 }
 ![alt text](/images/20161201/5.png)
 
 
@@ -192,7 +198,7 @@ Seeing as our Azure Functions project (a pretend ASP.NET Core project) is contai
 
 
 ![alt text](/images/20161201/7.png)
-![alt text](/images/20161201/8.png)
+![alt text](/images/20161201/8.png){: .col-lg-12 }
 
 
 ### Archive the Output
@@ -200,7 +206,7 @@ Seeing as our Azure Functions project (a pretend ASP.NET Core project) is contai
 The output path of the publish will be different depending on the version of .NET you are referencing in the ASP.NET Core project. We're using .NET 4.6.2 here so the path of the directory reflects this:
 
 
-![alt text](/images/20161201/9.png)
+![alt text](/images/20161201/9.png){: .col-lg-12 }
 
 ### Releasing
 
