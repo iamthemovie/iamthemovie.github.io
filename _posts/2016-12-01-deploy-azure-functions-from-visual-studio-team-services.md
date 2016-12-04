@@ -65,7 +65,7 @@ Using CSX requires a direct reference to the external DLLs (Solution based or fr
 
 ## ARM Template and Environment Variables
 
-Important: Currently you have to deploy Dynamic App Service plans into Resource Groups first if they contain any standard tier Service Plans for other Web Apps. If you're adding Functions to an already existing Resource Group in Production you will have to deploy a new Resource Group. If you attempt to do this you may find the Azure Deployments fail with strange errors such as the "A Web App with the same name already exists".
+**Important**: Currently you have to deploy Dynamic App Service plans into Resource Groups first if they contain any standard tier Service Plans for other Web Apps. If you're adding Functions to an already existing Resource Group in Production you will have to deploy a new Resource Group. If you attempt to do this you may find the Azure Deployments fail with strange errors such as the "A Web App with the same name already exists".
 
 In the resources section of an ARM Template we'll need a Service Plan, the Application, and if ideally a dedicated Storage Account for storing the Function Apps diagnostic and Metric Information. We use other Queue Bindings from different storage accounts to trigger the functions.
 
