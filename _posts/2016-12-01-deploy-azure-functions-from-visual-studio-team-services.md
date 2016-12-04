@@ -24,7 +24,7 @@ While we love the simplicity of the click-to-configure that the Azure Portal giv
 
 # Functions Under The Hood
 
-Something that's quite evident when working with Functions is they are effectively deploy as Web Apps. They consists of :
+Something that's quite evident when working with Functions is they are effectively deploy as Web Apps. They consists of:
 
 • A Service Plan - this can be a Dynamic Service plan set to the Consumption Tier (pay for what you execute).
 
