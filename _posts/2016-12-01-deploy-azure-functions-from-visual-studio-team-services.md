@@ -71,7 +71,7 @@ In the resources section of an ARM Template we'll need a Service Plan, the Appli
 
 **The Service Plan (Server Farm)**
 
-As mentioned earlier, the Service Plans for functions need to be deployed first to a resource group as Azure allocates these slightly differently from legacy systems. The key here is the SKU which is set to Dynamic with a couple of other Consumption Plans specific properties. Apart from the obvious other properties are the same as a standard service plan.
+As mentioned earlier, the Service Plan for functions need to be deployed first to a resource group as Azure allocates these slightly differently from the legacy systems for Web Jobs (I say legacy, I mean older). The key here is the SKU which is set to Dynamic with a couple of other Consumption Plan specific properties. Apart from the obvious, other properties are the same as a standard service plan.
 
 ```json
 {
